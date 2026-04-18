@@ -132,116 +132,46 @@
     pointer-events: none;
   }
 
-  .hero-bg-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(240,121,32,0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(240,121,32,0.035) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    mask-image: radial-gradient(ellipse 70% 90% at 15% 50%, black 20%, transparent 100%);
-  }
-
-  /* badges row */
-  .hero-top-badges {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
+  .hero-tag {
+    display: inline-block;
+    background: rgba(240,121,32,0.12);
+    border: 1px solid rgba(240,121,32,0.5);
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
     margin-bottom: 28px;
     animation: fadeUp 0.6s ease both;
   }
 
-  .hero-location {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: var(--gray-light);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
-
   .hero h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(72px, 9vw, 120px);
-    line-height: 0.9;
+    font-size: clamp(64px, 8vw, 110px);
+    line-height: 0.92;
     letter-spacing: 2px;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
     animation: fadeUp 0.6s ease 0.1s both;
   }
 
-  .hero h1 span {
-    color: var(--orange);
-    text-shadow: 0 0 60px rgba(240,121,32,0.3);
-  }
+  .hero h1 span { color: var(--orange); }
 
   .hero p {
     font-size: 17px;
     color: var(--gray-light);
-    line-height: 1.75;
-    max-width: 440px;
-    margin-bottom: 40px;
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 44px;
     animation: fadeUp 0.6s ease 0.2s both;
   }
 
   .hero-btns {
     display: flex;
-    gap: 14px;
+    gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 0;
     animation: fadeUp 0.6s ease 0.3s both;
-  }
-
-  .hero-divider {
-    height: 1px;
-    background: rgba(255,255,255,0.08);
-    margin: 36px 0;
-    animation: fadeUp 0.6s ease 0.4s both;
-  }
-
-  /* mini stats */
-  .hero-mini-stats {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    animation: fadeUp 0.6s ease 0.45s both;
-  }
-
-  .hero-mini-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding-right: 24px;
-  }
-
-  .hero-mini-stat strong {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 30px;
-    color: var(--orange);
-    line-height: 1;
-    letter-spacing: 1px;
-  }
-
-  .hero-mini-stat span {
-    font-size: 11px;
-    color: var(--gray-mid);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  .hero-mini-sep {
-    width: 1px;
-    height: 32px;
-    background: rgba(255,255,255,0.1);
-    margin: 0 24px 0 0;
-    flex-shrink: 0;
   }
 
   .btn-primary {
@@ -925,16 +855,13 @@
 
     .hero {
       grid-template-columns: 1fr;
-      padding: 110px 24px 60px;
+      padding: 100px 24px 60px;
       text-align: center;
     }
 
-    .hero-top-badges { justify-content: center; }
-    .hero p { margin: 0 auto 40px; }
+    .hero p { margin: 0 auto 44px; }
     .hero-btns { justify-content: center; }
     .hero-visual { display: none; }
-    .hero-mini-stats { justify-content: center; }
-    .hero-mini-stat { align-items: center; }
 
     .stats { grid-template-columns: repeat(2, 1fr); }
 

@@ -18,7 +18,8 @@
       "Bash(sed -i 's|<input type=\"tel\" placeholder=\"\\(11\\) 00000-0000\">|<input type=\"tel\" name=\"telefone\" placeholder=\"\\(11\\) 00000-0000\">|g' /c/SiteGraficaCd/index.html)",
       "Bash(sed -i 's|<input type=\"email\" placeholder=\"seu@email.com\">|<input type=\"email\" name=\"email\" placeholder=\"seu@email.com\" required>|g' /c/SiteGraficaCd/index.html)",
       "Bash(git checkout *)",
-      "Bash(sed -n '27,46p' /c/SiteGraficaCd/index.html)"
+      "Bash(sed -n '27,46p' /c/SiteGraficaCd/index.html)",
+      "Bash(git commit *)"
     ]
   }
 }
