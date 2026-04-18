@@ -776,8 +776,10 @@
     .services-grid { grid-template-columns: 1fr; }
 
     .why { padding: 70px 24px; }
-    .why-grid { grid-template-columns: 1fr; gap: 40px; }
-    .why-deco { display: none; }
+    .why-features { grid-template-columns: 1fr 1fr; }
+    .why-trust { flex-wrap: wrap; }
+    .why-trust-item { min-width: 45%; }
+    .why-trust-divider { display: none; }
 
     .contact {
       grid-template-columns: 1fr;
