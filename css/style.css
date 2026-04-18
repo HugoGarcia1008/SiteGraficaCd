@@ -152,7 +152,8 @@
   }
 
   .hero-tag {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.12);
     color: var(--gray-light);
@@ -161,6 +162,7 @@
     letter-spacing: 1px;
     padding: 6px 14px;
     border-radius: 20px;
+    white-space: nowrap;
   }
 
   .hero h1 {
