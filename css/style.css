@@ -896,6 +896,7 @@
     .stats { grid-template-columns: 1fr 1fr; }
     .stat { padding: 24px 16px; }
     .stat-num { font-size: 40px; }
+    .services-grid { grid-template-columns: 1fr; }
     .why-features { grid-template-columns: 1fr; }
     .why-trust-item { min-width: 100%; }
   }
