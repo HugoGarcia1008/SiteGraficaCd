@@ -11,7 +11,12 @@
       "Read(//tmp/**)",
       "Bash(grep -v \"^</script>\" echo \"JS lines: $\\(wc -l < /c/SiteGraficaCd/js/script.js\\)\")",
       "Skill(update-config)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(sed -i 's|<a href=\"tel:1141278053\" class=\"nav-cta\">Ligar Agora</a>|<a href=\"tel:+551141278053\" class=\"nav-cta\">📞 \\(11\\) 4127-8053</a>|g' /c/SiteGraficaCd/index.html)",
+      "Bash(sed -i 's|<form class=\"contact-form\" onsubmit=\"handleSubmit\\(event\\)\">|<form class=\"contact-form\" onsubmit=\"handleSubmit\\(event\\)\" id=\"contactForm\">|g' /c/SiteGraficaCd/index.html)",
+      "Bash(sed -i 's|<input type=\"text\" placeholder=\"Seu nome\">|<input type=\"text\" name=\"nome\" placeholder=\"Seu nome\" required>|g' /c/SiteGraficaCd/index.html)",
+      "Bash(sed -i 's|<input type=\"tel\" placeholder=\"\\(11\\) 00000-0000\">|<input type=\"tel\" name=\"telefone\" placeholder=\"\\(11\\) 00000-0000\">|g' /c/SiteGraficaCd/index.html)",
+      "Bash(sed -i 's|<input type=\"email\" placeholder=\"seu@email.com\">|<input type=\"email\" name=\"email\" placeholder=\"seu@email.com\" required>|g' /c/SiteGraficaCd/index.html)"
     ]
   }
 }

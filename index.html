@@ -19,7 +19,7 @@
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#diferenciais">Diferenciais</a></li>
     <li><a href="#contato">Contato</a></li>
-    <li><a href="tel:1141278053" class="nav-cta">Ligar Agora</a></li>
+    <li><a href="tel:+551141278053" class="nav-cta">📞 (11) 4127-8053</a></li>
   </ul>
 </nav>
 
@@ -170,24 +170,24 @@
     </div>
   </div>
   <div>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+    <form class="contact-form" onsubmit="handleSubmit(event)" id="contactForm">
       <div class="form-row">
         <div class="form-group">
           <label>Nome</label>
-          <input type="text" placeholder="Seu nome">
+          <input type="text" name="nome" placeholder="Seu nome" required>
         </div>
         <div class="form-group">
           <label>Telefone</label>
-          <input type="tel" placeholder="(11) 00000-0000">
+          <input type="tel" name="telefone" placeholder="(11) 00000-0000">
         </div>
       </div>
       <div class="form-group">
         <label>E-mail</label>
-        <input type="email" placeholder="seu@email.com">
+        <input type="email" name="email" placeholder="seu@email.com" required>
       </div>
       <div class="form-group">
         <label>Serviço</label>
-        <select>
+        <select name="servico">
           <option value="">Selecione o serviço</option>
           <option>Banner / Faixa</option>
           <option>Cartão de Visita</option>
@@ -199,7 +199,7 @@
       </div>
       <div class="form-group">
         <label>Mensagem</label>
-        <textarea placeholder="Descreva seu projeto..."></textarea>
+        <textarea name="mensagem" placeholder="Descreva seu projeto..." required></textarea>
       </div>
       <button type="submit" class="form-submit">Enviar mensagem →</button>
     </form>
