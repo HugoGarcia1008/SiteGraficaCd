@@ -389,68 +389,138 @@
   .why {
     background: var(--gray-dark);
     padding: 100px 60px;
+    position: relative;
+    overflow: hidden;
   }
 
-  .why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
+  .why::before {
+    content: 'CD';
+    position: absolute;
+    right: -40px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(200px, 22vw, 340px);
+    color: rgba(240,121,32,0.04);
+    line-height: 1;
+    letter-spacing: -8px;
+    pointer-events: none;
+    user-select: none;
   }
 
-  .why-left .section-title { margin-bottom: 28px; }
+  .why-header {
+    max-width: 640px;
+    margin-bottom: 60px;
+  }
 
-  .why-left p {
+  .why-header .section-tag { margin-bottom: 12px; }
+
+  .why-header .section-title { margin-bottom: 20px; }
+
+  .why-subtitle {
     font-size: 16px;
     color: var(--gray-light);
-    line-height: 1.8;
-    margin-bottom: 36px;
+    line-height: 1.75;
   }
 
-  .why-items {
+  .why-features {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(240,121,32,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 4px;
   }
 
-  .why-item {
-    background: var(--black);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 10px;
-    padding: 24px;
-    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  .why-card {
+    background: #1a1a1a;
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, transform 0.3s;
   }
 
-  .why-item:hover {
-    border-color: rgba(240,121,32,0.4);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(240,121,32,0.1);
+  .why-card:hover { background: #202020; }
+
+  .why-card-icon {
+    font-size: 36px;
+    margin-bottom: 18px;
+    display: block;
+    line-height: 1;
+    filter: drop-shadow(0 0 8px rgba(240,121,32,0.3));
   }
 
-  .why-icon { font-size: 30px; margin-bottom: 12px; }
-
-  .why-item h4 {
-    font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 6px;
+  .why-card h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
     color: var(--white);
+    margin-bottom: 10px;
   }
 
-  .why-item p {
-    font-size: 13px;
+  .why-card p {
+    font-size: 14px;
     color: var(--gray-light);
-    line-height: 1.5;
+    line-height: 1.65;
     margin: 0;
   }
 
-  .why-deco {
+  .why-card-line {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 3px;
+    background: linear-gradient(90deg, var(--orange), var(--orange-light));
+    transition: width 0.4s ease;
+  }
+
+  .why-card:hover .why-card-line { width: 100%; }
+
+  /* Trust bar */
+  .why-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background: var(--black);
+    border: 1px solid rgba(240,121,32,0.15);
+    border-radius: 12px;
+    margin-top: 40px;
+    overflow: hidden;
+  }
+
+  .why-trust-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 20px;
+    transition: background 0.3s;
+  }
+
+  .why-trust-item:hover { background: rgba(240,121,32,0.06); }
+
+  .why-trust-num {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(120px, 15vw, 200px);
-    color: rgba(240,121,32,0.05);
-    line-height: 0.85;
-    letter-spacing: -4px;
-    user-select: none;
-    pointer-events: none;
+    font-size: 48px;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 6px;
+    text-shadow: 0 0 24px rgba(240,121,32,0.3);
+  }
+
+  .why-trust-label {
+    font-size: 12px;
+    color: var(--gray-light);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .why-trust-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255,255,255,0.07);
+    flex-shrink: 0;
   }
 
   /* ── CONTACT ── */
