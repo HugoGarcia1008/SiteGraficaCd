@@ -31,6 +31,17 @@ js/script.js     # Interações: submit do formulário + scroll reveal
 
 Fontes via Google Fonts: **Bebas Neue** (títulos) e **DM Sans** (corpo).
 
+## Sincronização automática com GitHub
+
+O projeto está configurado para **fazer commit e push automaticamente** a cada arquivo salvo via Claude Code.
+
+Isso é feito via hook `PostToolUse` em `.claude/settings.json`:
+- Dispara após qualquer `Write` ou `Edit`
+- Executa `git add -A && git commit -m "auto: update files" && git push`
+- Só faz commit se houver mudanças reais (evita commits vazios)
+
+Repositório: **https://github.com/HugoGarcia1008/SiteGraficaCd**
+
 ## Seções da página
 
 `nav` → `hero` → `stats` → `services-grid` → `why` → `contact` → `footer`

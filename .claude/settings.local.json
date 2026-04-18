@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config *)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\")",
+      "Bash(gh auth *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(sed 's/^<style>//;s/^<\\\\/style>//')",
+      "Read(//tmp/**)",
+      "Bash(grep -v \"^</script>\" echo \"JS lines: $\\(wc -l < /c/SiteGraficaCd/js/script.js\\)\")",
+      "Skill(update-config)",
+      "Bash(python3 *)"
+    ]
+  }
+}
