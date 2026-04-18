@@ -915,13 +915,17 @@
 
     .hero {
       grid-template-columns: 1fr;
-      padding: 100px 24px 60px;
+      padding: 110px 24px 60px;
       text-align: center;
     }
 
-    .hero p { margin: 0 auto 44px; }
+    .hero-badges { justify-content: center; }
+    .hero p { margin: 0 auto 40px; }
     .hero-btns { justify-content: center; }
     .hero-visual { display: none; }
+    .hero-trust { justify-content: center; flex-wrap: wrap; gap: 20px; }
+    .hero-trust-sep { display: none; }
+    .hero-trust-item { padding-right: 0; align-items: center; }
 
     .stats { grid-template-columns: repeat(2, 1fr); }
 
