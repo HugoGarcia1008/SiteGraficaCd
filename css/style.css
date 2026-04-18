@@ -867,7 +867,9 @@
 
     .section { padding: 70px 24px; }
 
-    .services-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .section-subtitle { display: none; }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 8px; }
 
     .why { padding: 70px 24px; }
     .why-features { grid-template-columns: 1fr 1fr; }
