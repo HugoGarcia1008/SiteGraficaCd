@@ -484,6 +484,8 @@
   /* ── WHY US ── */
   .why {
     background: var(--gray-dark);
+    background-image: radial-gradient(circle, rgba(240,121,32,0.1) 1px, transparent 1px);
+    background-size: 28px 28px;
     padding: 100px 60px;
     position: relative;
     overflow: hidden;
