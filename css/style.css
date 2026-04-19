@@ -730,7 +730,7 @@
   .form-group input::placeholder,
   .form-group textarea::placeholder { color: var(--gray-mid); }
 
-  .form-group select option { background: #1e1e1e; }
+  .form-group select option { background: #080808; }
 
   .form-group textarea { resize: vertical; min-height: 120px; }
 
