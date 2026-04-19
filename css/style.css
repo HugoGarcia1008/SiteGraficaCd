@@ -538,7 +538,7 @@
     transition: background 0.3s, transform 0.3s;
   }
 
-  .why-card:hover { background: #202020; }
+  .why-card:hover { background: #111111; }
 
   .why-card-icon {
     font-size: 36px;
