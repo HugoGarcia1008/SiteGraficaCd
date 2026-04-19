@@ -120,6 +120,9 @@
     padding: 120px 60px 80px;
     position: relative;
     overflow: hidden;
+    background-color: #000;
+    background-image: radial-gradient(circle, rgba(240,121,32,0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 
   .hero::after {
