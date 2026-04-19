@@ -342,7 +342,7 @@
   }
 
   .service-card:hover {
-    background: #222;
+    background: #111;
     border-color: rgba(240,121,32,0.35);
     transform: translateY(-4px);
     box-shadow: 0 12px 36px rgba(0,0,0,0.35);
