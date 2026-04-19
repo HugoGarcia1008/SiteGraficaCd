@@ -337,7 +337,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(240,121,32,0.12);
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -345,10 +345,10 @@
   }
 
   .service-card:hover {
-    background: #111;
-    border-color: rgba(240,121,32,0.35);
+    background: #0a0a0a;
+    border-color: rgba(240,121,32,0.5);
     transform: translateY(-4px);
-    box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+    box-shadow: 0 16px 44px rgba(0,0,0,0.6), 0 0 0 1px rgba(240,121,32,0.2);
   }
 
   .service-card::before {
