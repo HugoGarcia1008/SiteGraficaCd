@@ -57,8 +57,9 @@
 
   .nav-brand {
     font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
-    letter-spacing: 3px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
     color: var(--orange);
   }
 
