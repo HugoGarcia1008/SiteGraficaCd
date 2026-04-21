@@ -278,7 +278,8 @@
 
   .stat-num {
     font-family: 'Orbitron', sans-serif;
-    font-size: 56px;
+    font-size: 36px;
+    font-weight: 800;
     color: var(--orange);
     line-height: 1;
     margin-bottom: 6px;
