@@ -1044,8 +1044,9 @@
 
   .machine-info h3 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 22px;
-    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0px;
     color: var(--white);
     margin-bottom: 8px;
   }
