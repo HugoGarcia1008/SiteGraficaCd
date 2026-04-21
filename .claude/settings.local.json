@@ -30,7 +30,9 @@
       "Bash(awk NR<=14 || \\(NR>=30 && NR<=42\\) || \\(NR>=60 && NR<=100\\) || \\(NR>=290 && NR<=328\\) *)",
       "WebSearch",
       "WebFetch(domain:commons.wikimedia.org)",
-      "WebFetch(domain:upload.wikimedia.org)"
+      "WebFetch(domain:upload.wikimedia.org)",
+      "WebFetch(domain:www.exapro.com)",
+      "WebFetch(domain:media.exapro.com)"
     ]
   }
 }
