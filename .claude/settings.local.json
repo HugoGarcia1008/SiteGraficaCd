@@ -32,7 +32,11 @@
       "WebFetch(domain:commons.wikimedia.org)",
       "WebFetch(domain:upload.wikimedia.org)",
       "WebFetch(domain:www.exapro.com)",
-      "WebFetch(domain:media.exapro.com)"
+      "WebFetch(domain:media.exapro.com)",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:source.unsplash.com)",
+      "WebFetch(domain:www.pexels.com)",
+      "WebFetch(domain:images.pexels.com)"
     ]
   }
 }
