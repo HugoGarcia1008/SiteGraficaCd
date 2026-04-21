@@ -477,9 +477,10 @@
 
   .service-card--cta h3 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
-    letter-spacing: 1px;
-    line-height: 1.1;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    line-height: 1.2;
     color: var(--white);
   }
 
