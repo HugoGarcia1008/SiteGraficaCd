@@ -853,6 +853,115 @@
 
   .stars { letter-spacing: 2px; }
 
+  /* ── PORTFOLIO ── */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 12px;
+  }
+
+  .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+  }
+
+  .portfolio-item--tall {
+    grid-row: span 2;
+    aspect-ratio: unset;
+  }
+
+  .portfolio-item--wide {
+    grid-column: span 2;
+    aspect-ratio: 16/7;
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+    filter: brightness(0.8) saturate(0.85);
+  }
+
+  .portfolio-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.55) saturate(0.7);
+  }
+
+  .portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 55%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    transition: background 0.4s ease;
+  }
+
+  .portfolio-item:hover .portfolio-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.15) 100%);
+  }
+
+  .portfolio-cat {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    background: rgba(240,121,32,0.15);
+    border: 1px solid rgba(240,121,32,0.4);
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+    align-self: flex-start;
+  }
+
+  .portfolio-overlay h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+
+  .portfolio-overlay p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 340px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+
+  .portfolio-item:hover .portfolio-overlay p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .portfolio-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+
+  .portfolio-cta p {
+    font-size: 16px;
+    color: var(--gray-light);
+  }
+
   /* ── MACHINES ── */
   .machines-grid {
     display: grid;
