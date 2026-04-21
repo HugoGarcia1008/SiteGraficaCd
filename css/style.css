@@ -935,11 +935,12 @@
 
   .portfolio-overlay h3 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 22px;
-    letter-spacing: 1px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0px;
     color: var(--white);
     margin-bottom: 6px;
-    line-height: 1.1;
+    line-height: 1.2;
   }
 
   .portfolio-overlay p {
