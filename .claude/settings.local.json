@@ -27,7 +27,10 @@
       "Bash(awk 'NR==15{print substr\\($0,1,200\\)}' /c/SiteGraficaCd/index.html)",
       "Bash(awk 'NR==43{print substr\\($0,1,200\\)}' /c/SiteGraficaCd/index.html)",
       "Bash(awk 'NR==318{print substr\\($0,1,200\\)}' /c/SiteGraficaCd/index.html)",
-      "Bash(awk NR<=14 || \\(NR>=30 && NR<=42\\) || \\(NR>=60 && NR<=100\\) || \\(NR>=290 && NR<=328\\) *)"
+      "Bash(awk NR<=14 || \\(NR>=30 && NR<=42\\) || \\(NR>=60 && NR<=100\\) || \\(NR>=290 && NR<=328\\) *)",
+      "WebSearch",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:upload.wikimedia.org)"
     ]
   }
 }
