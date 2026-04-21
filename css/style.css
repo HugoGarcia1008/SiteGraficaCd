@@ -964,7 +964,8 @@
     .section-subtitle { display: none; }
     .section-header { flex-direction: column; align-items: flex-start; gap: 8px; }
 
-    .machines-grid { grid-template-columns: repeat(2, 1fr); }
+    .machines-grid,
+    .machines-grid--3 { grid-template-columns: repeat(2, 1fr); }
 
     .why { padding: 70px 24px; }
     .why-features { grid-template-columns: 1fr 1fr; }
