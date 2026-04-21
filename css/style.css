@@ -853,6 +853,87 @@
 
   .stars { letter-spacing: 2px; }
 
+  /* ── MACHINES ── */
+  .machines-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .machine-card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(240,121,32,0.12);
+    background: var(--gray-dark);
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+
+  .machine-card:hover {
+    border-color: rgba(240,121,32,0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 44px rgba(0,0,0,0.6), 0 0 0 1px rgba(240,121,32,0.2);
+  }
+
+  .machine-img-wrap {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+  }
+
+  .machine-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+    filter: brightness(0.85) saturate(0.8);
+  }
+
+  .machine-card:hover .machine-img-wrap img {
+    transform: scale(1.06);
+    filter: brightness(0.75) saturate(0.7);
+  }
+
+  .machine-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+  }
+
+  .machine-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    background: rgba(240,121,32,0.15);
+    border: 1px solid rgba(240,121,32,0.4);
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  .machine-info {
+    padding: 20px 20px 22px;
+  }
+
+  .machine-info h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .machine-info p {
+    font-size: 13px;
+    color: var(--gray-light);
+    line-height: 1.6;
+    margin: 0;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
