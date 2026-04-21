@@ -1076,6 +1076,11 @@
     .machines-grid,
     .machines-grid--3 { grid-template-columns: repeat(2, 1fr); }
 
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
+    .portfolio-item--tall { grid-row: unset; aspect-ratio: 4/3; }
+    .portfolio-item--wide { grid-column: unset; aspect-ratio: 4/3; }
+    .portfolio-overlay p { opacity: 1; transform: translateY(0); }
+
     .why { padding: 70px 24px; }
     .why-features { grid-template-columns: 1fr 1fr; }
     .why-trust { flex-wrap: wrap; }
