@@ -56,7 +56,7 @@
   .nav-logo svg { width: 42px; height: 42px; }
 
   .nav-brand {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 28px;
     letter-spacing: 3px;
     color: var(--orange);
@@ -151,7 +151,7 @@
   }
 
   .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: clamp(64px, 8vw, 110px);
     line-height: 0.92;
     letter-spacing: 2px;
@@ -275,7 +275,7 @@
   .stat:last-child { border-right: none; }
 
   .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 56px;
     color: var(--orange);
     line-height: 1;
@@ -319,7 +319,7 @@
   }
 
   .section-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: clamp(40px, 5vw, 64px);
     line-height: 1;
     letter-spacing: 1px;
@@ -365,7 +365,7 @@
   .service-card:hover::before { transform: scaleX(1); }
 
   .service-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 60px;
     color: rgba(240,121,32,0.1);
     line-height: 1;
@@ -395,7 +395,7 @@
   }
 
   .service-name {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 26px;
     letter-spacing: 1px;
     margin-bottom: 10px;
@@ -470,7 +470,7 @@
   .service-cta-icon { font-size: 40px; }
 
   .service-card--cta h3 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 28px;
     letter-spacing: 1px;
     line-height: 1.1;
@@ -499,7 +499,7 @@
     position: absolute;
     right: -40px; top: 50%;
     transform: translateY(-50%);
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: clamp(200px, 22vw, 340px);
     color: rgba(240,121,32,0.04);
     line-height: 1;
@@ -552,7 +552,7 @@
   }
 
   .why-card h4 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 22px;
     letter-spacing: 1px;
     color: var(--white);
@@ -601,7 +601,7 @@
   .why-trust-item:hover { background: rgba(240,121,32,0.06); }
 
   .why-trust-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 48px;
     color: var(--orange);
     line-height: 1;
@@ -924,7 +924,7 @@
   }
 
   .portfolio-overlay h3 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 22px;
     letter-spacing: 1px;
     color: var(--white);
@@ -1033,7 +1033,7 @@
   }
 
   .machine-info h3 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 22px;
     letter-spacing: 1px;
     color: var(--white);
