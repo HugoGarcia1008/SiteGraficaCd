@@ -19,7 +19,15 @@
       "Bash(sed -i 's|<input type=\"email\" placeholder=\"seu@email.com\">|<input type=\"email\" name=\"email\" placeholder=\"seu@email.com\" required>|g' /c/SiteGraficaCd/index.html)",
       "Bash(git checkout *)",
       "Bash(sed -n '27,46p' /c/SiteGraficaCd/index.html)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git pull *)",
+      "Bash(git stash *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{url_effective}\" -L https://hugogarcia1008.github.io/SiteGraficaCd/)",
+      "Bash(awk length > 1000 {print NR\": \"length\" chars\"} *)",
+      "Bash(awk 'NR==15{print substr\\($0,1,200\\)}' /c/SiteGraficaCd/index.html)",
+      "Bash(awk 'NR==43{print substr\\($0,1,200\\)}' /c/SiteGraficaCd/index.html)",
+      "Bash(awk 'NR==318{print substr\\($0,1,200\\)}' /c/SiteGraficaCd/index.html)",
+      "Bash(awk NR<=14 || \\(NR>=30 && NR<=42\\) || \\(NR>=60 && NR<=100\\) || \\(NR>=290 && NR<=328\\) *)"
     ]
   }
 }
