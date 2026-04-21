@@ -31,7 +31,7 @@ js/script.js     # Formulário (mailto), scroll reveal, nav scroll, máscara de 
 --white: #F5F5F5
 ```
 
-Fontes via Google Fonts: **Bebas Neue** (títulos) e **DM Sans** (corpo).
+Fontes via Google Fonts: **Orbitron** (títulos, pesos 400–900) e **Exo 2** (corpo, pesos 300–700).
 
 ## Seções da página (ordem)
 
