@@ -1109,6 +1109,7 @@
     .services-grid { grid-template-columns: 1fr; }
     .machines-grid,
     .machines-grid--3 { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
     .why-features { grid-template-columns: 1fr; }
     .why-trust-item { min-width: 100%; }
   }
