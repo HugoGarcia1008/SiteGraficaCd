@@ -1,42 +1,102 @@
 // ─── FORM ────────────────────────────────────────────────────────────
-function handleSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('.form-submit');
-  const status = form.querySelector('.form-status');
+const WHATSAPP_PHONE = '5511998483958';
+const EMAIL_ADDR = 'graficacd@terra.com.br';
 
-  const nome = form.nome.value.trim();
-  const telefone = form.telefone.value.trim();
-  const email = form.email.value.trim();
-  const servico = form.servico.value;
-  const mensagem = form.mensagem.value.trim();
+function buildMessage({ nome, telefone, email, servico, mensagem }) {
+  return [
+    'Olá! Gostaria de um orçamento.',
+    '',
+    `*Nome:* ${nome}`,
+    telefone ? `*Telefone:* ${telefone}` : null,
+    `*E-mail:* ${email}`,
+    servico ? `*Serviço:* ${servico}` : null,
+    '',
+    `*Mensagem:*`,
+    mensagem,
+  ].filter(Boolean).join('\n');
+}
 
-  const corpo = encodeURIComponent(
-    `Nome: ${nome}\nTelefone: ${telefone}\nE-mail: ${email}\nServiço: ${servico}\n\nMensagem:\n${mensagem}`
-  );
-  const assunto = encodeURIComponent(`Orçamento – ${servico || 'Gráfica CD'}`);
-
-  window.location.href = `mailto:graficacd@terra.com.br?subject=${assunto}&body=${corpo}`;
-
-  const originalText = btn.textContent;
-  btn.textContent = '✓ Abrindo seu e-mail...';
+function showBusyState(btn, label) {
+  btn.dataset.originalLabel = btn.innerHTML;
+  btn.innerHTML = label;
   btn.style.background = '#2ecc71';
   btn.style.color = '#fff';
   btn.disabled = true;
+}
 
-  if (status) {
-    status.textContent = 'Abrindo seu cliente de e-mail. Se não abrir, escreva para graficacd@terra.com.br ou chame no WhatsApp.';
-    status.classList.add('is-visible');
+function restoreBtn(btn) {
+  if (!btn.dataset.originalLabel) return;
+  btn.innerHTML = btn.dataset.originalLabel;
+  delete btn.dataset.originalLabel;
+  btn.style.background = '';
+  btn.style.color = '';
+  btn.disabled = false;
+}
+
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  let activeChannel = 'whatsapp';
+
+  contactForm.querySelectorAll('button[type="submit"]').forEach(btn => {
+    btn.addEventListener('click', () => { activeChannel = btn.dataset.channel || 'whatsapp'; });
+  });
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    const data = {
+      nome: contactForm.nome.value.trim(),
+      telefone: contactForm.telefone.value.trim(),
+      email: contactForm.email.value.trim(),
+      servico: contactForm.servico.value,
+      mensagem: contactForm.mensagem.value.trim(),
+    };
+
+    const status = contactForm.querySelector('.form-status');
+    const btn = contactForm.querySelector(`button[data-channel="${activeChannel}"]`);
+    const message = buildMessage(data);
+
+    if (activeChannel === 'whatsapp') {
+      const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank', 'noopener');
+      showBusyState(btn, '✓ Abrindo WhatsApp...');
+      if (status) {
+        status.textContent = 'Abrindo o WhatsApp com sua mensagem. Envie para confirmar o pedido.';
+        status.classList.add('is-visible');
+      }
+    } else {
+      const subject = encodeURIComponent(`Orçamento – ${data.servico || 'Gráfica CD'}`);
+      const body = encodeURIComponent(message.replace(/\*/g, ''));
+      window.location.href = `mailto:${EMAIL_ADDR}?subject=${subject}&body=${body}`;
+      showBusyState(btn, '✓ Abrindo seu e-mail...');
+      if (status) {
+        status.textContent = `Abrindo seu cliente de e-mail. Não abriu? Escreva para ${EMAIL_ADDR} ou use o WhatsApp.`;
+        status.classList.add('is-visible');
+      }
+    }
+
+    setTimeout(() => {
+      restoreBtn(btn);
+      if (status) { status.textContent = ''; status.classList.remove('is-visible'); }
+      contactForm.reset();
+      const counter = contactForm.querySelector('[data-count]');
+      if (counter) counter.textContent = '0';
+    }, 4500);
+  });
+
+  // Contador de caracteres da mensagem
+  const textarea = contactForm.querySelector('#f-mensagem');
+  const counter = contactForm.querySelector('[data-count]');
+  if (textarea && counter) {
+    textarea.addEventListener('input', () => {
+      counter.textContent = String(textarea.value.length);
+    });
   }
-
-  setTimeout(() => {
-    btn.textContent = originalText;
-    btn.style.background = '';
-    btn.style.color = '';
-    btn.disabled = false;
-    if (status) { status.textContent = ''; status.classList.remove('is-visible'); }
-    form.reset();
-  }, 4500);
 }
 
 // ─── SCROLL REVEAL ───────────────────────────────────────────────────
