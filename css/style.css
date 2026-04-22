@@ -101,6 +101,9 @@
 
   .nav-logo img { height: clamp(32px, 4vw, 42px); width: auto; display: block; }
   .nav-logo svg { width: 42px; height: 42px; }
+  .nav-logo-img { filter: drop-shadow(0 0 8px rgba(240,121,32,0.6)); }
+  .footer-logo-img { height: 38px !important; width: auto; filter: drop-shadow(0 0 6px rgba(240,121,32,0.5)); }
+  .footer-brand { font-size: 20px !important; }
 
   .nav-brand {
     font-family: 'Orbitron', sans-serif;
