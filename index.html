@@ -533,42 +533,53 @@
     </div>
   </div>
   <div>
-    <form class="contact-form" onsubmit="handleSubmit(event)" id="contactForm" novalidate>
+    <form class="contact-form" id="contactForm" novalidate>
       <div class="form-row">
         <div class="form-group">
-          <label for="f-nome">Nome</label>
-          <input id="f-nome" type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
+          <label for="f-nome">Nome <span class="required" aria-hidden="true">*</span></label>
+          <input id="f-nome" type="text" name="nome" placeholder="Seu nome" required autocomplete="name" minlength="2" maxlength="80">
         </div>
         <div class="form-group">
           <label for="f-telefone">Telefone</label>
-          <input id="f-telefone" type="tel" name="telefone" placeholder="(11) 00000-0000" autocomplete="tel" inputmode="numeric">
+          <input id="f-telefone" type="tel" name="telefone" placeholder="(11) 00000-0000" autocomplete="tel" inputmode="numeric" pattern="\(\d{2}\) \d{4,5}-\d{4}">
         </div>
       </div>
       <div class="form-group">
-        <label for="f-email">E-mail</label>
-        <input id="f-email" type="email" name="email" placeholder="seu@email.com" required autocomplete="email">
+        <label for="f-email">E-mail <span class="required" aria-hidden="true">*</span></label>
+        <input id="f-email" type="email" name="email" placeholder="seu@email.com" required autocomplete="email" maxlength="120">
       </div>
       <div class="form-group">
         <label for="f-servico">Serviço</label>
         <select id="f-servico" name="servico">
           <option value="">Selecione o serviço</option>
-          <option>Banner / Faixa</option>
-          <option>Cartão de Visita</option>
-          <option>Flyer / Panfleto</option>
-          <option>Embalagem</option>
-          <option>Calendário</option>
-          <option>Arte & Criação</option>
-          <option>Brinde Personalizado</option>
+          <option>Banners &amp; Faixas</option>
+          <option>Cartões de Visita</option>
+          <option>Flyers &amp; Panfletos</option>
+          <option>Embalagens</option>
+          <option>Calendários</option>
+          <option>Arte &amp; Criação</option>
+          <option>Blocos &amp; Formulários</option>
+          <option>Brindes Gráficos</option>
           <option>Outro</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="f-mensagem">Mensagem</label>
-        <textarea id="f-mensagem" name="mensagem" placeholder="Descreva seu projeto (tamanho, quantidade, prazo desejado)..." required></textarea>
+        <label for="f-mensagem">
+          Mensagem <span class="required" aria-hidden="true">*</span>
+          <span class="char-counter" aria-live="polite"><span data-count>0</span>/500</span>
+        </label>
+        <textarea id="f-mensagem" name="mensagem" placeholder="Descreva seu projeto: tamanho, quantidade, prazo desejado, acabamento..." required minlength="10" maxlength="500"></textarea>
       </div>
-      <button type="submit" class="form-submit">Enviar mensagem →</button>
+      <div class="form-actions">
+        <button type="submit" class="form-submit form-submit--wpp" data-channel="whatsapp">
+          <span class="btn-icon" aria-hidden="true">💬</span> Enviar pelo WhatsApp
+        </button>
+        <button type="submit" class="form-submit form-submit--email" data-channel="email">
+          <span class="btn-icon" aria-hidden="true">✉️</span> Enviar por e-mail
+        </button>
+      </div>
       <p class="form-status" role="status" aria-live="polite"></p>
-      <p class="form-privacy">Ao enviar, abriremos seu cliente de e-mail com a mensagem pronta. Seus dados são usados apenas para responder ao seu pedido.</p>
+      <p class="form-privacy">Preferimos WhatsApp pela agilidade. Seus dados são usados apenas para responder ao seu pedido.</p>
     </form>
   </div>
 </section>
