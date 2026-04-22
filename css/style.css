@@ -879,6 +879,56 @@
     box-shadow: 0 8px 24px rgba(240,121,32,0.45);
   }
 
+  .form-submit:disabled { cursor: wait; opacity: 0.85; transform: none; }
+
+  .form-status {
+    font-size: 13px;
+    color: var(--gray-light);
+    line-height: 1.6;
+    min-height: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+    margin: 0;
+  }
+
+  .form-status.is-visible {
+    max-height: 80px;
+    opacity: 1;
+    margin-top: 4px;
+  }
+
+  .form-privacy {
+    font-size: 11px;
+    color: var(--gray-mid);
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+
+  /* Indicador aberto agora */
+  .open-status {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 6px;
+  }
+  .open-status.is-open {
+    color: #25D366;
+    background: rgba(37,211,102,0.12);
+    border: 1px solid rgba(37,211,102,0.35);
+  }
+  .open-status.is-closed {
+    color: var(--gray-light);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
   /* ── FOOTER ── */
   footer {
     background: rgba(0,0,0,0.7);
