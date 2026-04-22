@@ -37,7 +37,12 @@
       "WebFetch(domain:source.unsplash.com)",
       "WebFetch(domain:www.pexels.com)",
       "WebFetch(domain:images.pexels.com)",
-      "Bash(awk 'NR<=14 || \\(NR>=16 && NR<=42\\) || \\(NR>=44 && NR<=100\\)' /c/SiteGraficaCd/index.html)"
+      "Bash(awk 'NR<=14 || \\(NR>=16 && NR<=42\\) || \\(NR>=44 && NR<=100\\)' /c/SiteGraficaCd/index.html)",
+      "Bash(awk 'length > 500 { print NR\": \"length\" chars\" }' C:/SiteGraficaCd/index.html)",
+      "Bash(awk 'NR==15 {print substr\\($0,1,120\\)\"...\"}' C:/SiteGraficaCd/index.html)",
+      "Bash(awk 'NR==50 {print substr\\($0,1,120\\)\"...\"}' C:/SiteGraficaCd/index.html)",
+      "Bash(awk 'NR==450 {print substr\\($0,1,120\\)\"...\"}' C:/SiteGraficaCd/index.html)",
+      "Bash(node *)"
     ]
   }
 }
