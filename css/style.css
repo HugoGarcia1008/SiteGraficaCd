@@ -211,9 +211,10 @@
     padding: clamp(100px, 14vh, 140px) clamp(20px, 4vw, 60px) clamp(60px, 10vh, 100px);
     position: relative;
     overflow: hidden;
-    background-color: #000;
-    background-image: radial-gradient(circle, rgba(240,121,32,0.08) 1px, transparent 1px);
-    background-size: 32px 32px;
+    background:
+      radial-gradient(ellipse 60% 80% at 80% 40%, rgba(240,121,32,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 70% at 20% 90%, rgba(240,121,32,0.08) 0%, transparent 60%),
+      linear-gradient(180deg, #050505 0%, #000 60%);
   }
 
   .hero::after {
@@ -222,9 +223,72 @@
     right: -15%; top: 50%;
     transform: translateY(-50%);
     width: min(700px, 70vw); height: min(700px, 70vw);
-    background: radial-gradient(circle, rgba(240,121,32,0.18) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(240,121,32,0.15) 0%, transparent 70%);
     pointer-events: none;
+    z-index: 0;
   }
+
+  /* camada decorativa com "papéis" flutuantes e grid pontilhado */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(240,121,32,0.09) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse at center, #000 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 80%);
+  }
+
+  .hero-paper {
+    position: absolute;
+    display: block;
+    border-radius: 6px;
+    background: linear-gradient(135deg, rgba(240,121,32,0.22), rgba(240,121,32,0.05));
+    border: 1px solid rgba(240,121,32,0.35);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0.55;
+    animation: paper-drift 14s ease-in-out infinite;
+  }
+
+  .hero-paper--1 {
+    width: 120px; height: 160px;
+    top: 18%; left: 6%;
+    transform: rotate(-14deg);
+    animation-delay: 0s;
+  }
+  .hero-paper--2 {
+    width: 90px; height: 120px;
+    bottom: 22%; left: 42%;
+    transform: rotate(12deg);
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border-color: rgba(255,255,255,0.12);
+    animation-delay: 4s;
+    animation-duration: 18s;
+  }
+  .hero-paper--3 {
+    width: 140px; height: 180px;
+    top: 10%; right: 4%;
+    transform: rotate(8deg);
+    animation-delay: 8s;
+    animation-duration: 16s;
+  }
+
+  @keyframes paper-drift {
+    0%, 100% { transform: translateY(0) rotate(var(--r, -14deg)); }
+    50%       { transform: translateY(-18px) rotate(calc(var(--r, -14deg) + 2deg)); }
+  }
+  .hero-paper--1 { --r: -14deg; }
+  .hero-paper--2 { --r: 12deg; }
+  .hero-paper--3 { --r: 8deg; }
 
   .hero-content {
     position: relative;
