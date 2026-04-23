@@ -199,18 +199,43 @@ const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 
 if (navToggle && navLinks) {
+  let lastFocused = null;
+
+  const getFocusable = () =>
+    navLinks.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+
+  const trapFocus = (e) => {
+    if (!navLinks.classList.contains('is-open')) return;
+    if (e.key !== 'Tab') return;
+    const focusable = Array.from(getFocusable()).filter(el => !el.disabled && el.offsetParent !== null);
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
+    }
+  };
+
   const closeMenu = () => {
     navToggle.classList.remove('is-open');
     navLinks.classList.remove('is-open');
     document.body.classList.remove('nav-open');
     navToggle.setAttribute('aria-expanded', 'false');
+    document.removeEventListener('keydown', trapFocus);
+    if (lastFocused) lastFocused.focus();
   };
 
   const openMenu = () => {
+    lastFocused = document.activeElement;
     navToggle.classList.add('is-open');
     navLinks.classList.add('is-open');
     document.body.classList.add('nav-open');
     navToggle.setAttribute('aria-expanded', 'true');
+    document.addEventListener('keydown', trapFocus);
+    const first = getFocusable()[0];
+    if (first) setTimeout(() => first.focus(), 100);
   };
 
   navToggle.addEventListener('click', () => {
