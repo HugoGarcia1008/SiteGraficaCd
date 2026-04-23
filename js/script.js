@@ -123,6 +123,7 @@ const backToTop = document.querySelector('.back-to-top');
 
 function onScroll() {
   const y = window.scrollY;
+  document.body.classList.toggle('scrolled', y > 80);
   if (nav) {
     if (y > 60) {
       nav.style.background = 'rgba(0,0,0,0.97)';
