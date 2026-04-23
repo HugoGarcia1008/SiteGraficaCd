@@ -1211,6 +1211,44 @@
 
   .stars { letter-spacing: 2px; flex-shrink: 0; }
 
+  /* rating visual: estrelas preenchidas proporcionalmente */
+  .stars-visual {
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .stars-visual .stars-bg {
+    color: rgba(240,121,32,0.25);
+  }
+  .stars-visual .stars-fg {
+    position: absolute;
+    left: 0; top: 0;
+    width: var(--pct, 100%);
+    overflow: hidden;
+    white-space: nowrap;
+    color: var(--orange);
+  }
+
+  .rating-badge--link {
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+  .rating-badge--link:hover {
+    background: rgba(240,121,32,0.18);
+    border-color: var(--orange);
+    transform: translateY(-1px);
+  }
+  .rating-arrow {
+    display: inline-block;
+    margin-left: 4px;
+    transition: transform 0.25s ease;
+  }
+  .rating-badge--link:hover .rating-arrow { transform: translateX(3px); }
+
   /* ── PORTFOLIO ── */
   .portfolio-grid {
     display: grid;
