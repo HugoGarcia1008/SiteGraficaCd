@@ -156,11 +156,15 @@ if (telInput) {
   });
 }
 
-// ─── COUNT-UP STATS ──────────────────────────────────────────────────
+// ─── COUNT-UP STATS (respeita reduced-motion) ────────────────────────
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 function animateCount(el) {
   const text = el.textContent.trim();
   const match = text.match(/(\D*)(\d+(?:\.\d+)?)(.*)/);
   if (!match) return;
+  if (prefersReducedMotion) { el.textContent = text; return; }
+
   const prefix = match[1];
   const target = parseFloat(match[2]);
   const suffix = match[3];
