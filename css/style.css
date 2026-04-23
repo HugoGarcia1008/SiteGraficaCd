@@ -1761,10 +1761,13 @@
     }
 
     .hero-content { margin: 0 auto; }
-    .hero p { margin-left: auto; margin-right: auto; }
+    .hero p, .hero-lead { margin-left: auto; margin-right: auto; }
     .hero-btns { justify-content: center; }
+    .hero-features { justify-content: center; }
     .rating-badge { margin-left: auto; margin-right: auto; }
     .hero-tag { align-self: center; }
+    .hero-paper--2 { display: none; }
+    .hero-scroll { display: none; }
 
     .hero-visual { order: -1; }
     .logo-wrap { width: clamp(180px, 40vw, 240px); }
