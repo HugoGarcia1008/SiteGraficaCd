@@ -1,0 +1,18 @@
+{
+  "name": "Gráfica CD",
+  "short_name": "Gráfica CD",
+  "description": "Impressão gráfica profissional em São Bernardo do Campo. Cartões, banners, flyers, embalagens e brindes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#F07920",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
