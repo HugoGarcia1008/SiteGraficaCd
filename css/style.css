@@ -436,6 +436,8 @@
     letter-spacing: 0px;
   }
 
+  .title-accent { color: var(--orange); }
+
   .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
