@@ -296,6 +296,71 @@
     max-width: 640px;
   }
 
+  /* indicador de scroll */
+  .hero-scroll {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray-light);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0;
+    z-index: 3;
+    animation: hero-scroll-fade 0.6s ease 1.2s forwards;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .hero-scroll:hover { color: var(--orange); transform: translateX(-50%) translateY(-2px); }
+
+  .hero-scroll-arrow {
+    width: 1px;
+    height: 36px;
+    background: linear-gradient(to bottom, var(--orange), transparent);
+    position: relative;
+  }
+
+  .hero-scroll-arrow::before,
+  .hero-scroll-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    width: 6px;
+    height: 1px;
+    background: var(--orange);
+  }
+  .hero-scroll-arrow::before { left: -4px; transform: rotate(45deg); transform-origin: right; }
+  .hero-scroll-arrow::after  { right: -4px; transform: rotate(-45deg); transform-origin: left; }
+
+  .hero-scroll-arrow::before,
+  .hero-scroll-arrow::after { animation: hero-arrow-bounce 2s ease-in-out infinite; }
+
+  @keyframes hero-scroll-fade {
+    to { opacity: 0.85; }
+  }
+
+  @keyframes hero-arrow-bounce {
+    0%, 100% { transform: translateY(0) rotate(45deg); transform-origin: right; }
+    50%       { transform: translateY(4px) rotate(45deg); transform-origin: right; }
+  }
+  .hero-scroll-arrow::after {
+    animation-name: hero-arrow-bounce-r;
+  }
+  @keyframes hero-arrow-bounce-r {
+    0%, 100% { transform: translateY(0) rotate(-45deg); transform-origin: left; }
+    50%       { transform: translateY(4px) rotate(-45deg); transform-origin: left; }
+  }
+
+  /* some ao rolar */
+  body.scrolled .hero-scroll { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+
   .hero-tag {
     display: inline-block;
     background: rgba(240,121,32,0.12);
