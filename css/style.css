@@ -313,31 +313,91 @@
 
   .hero h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(30px, 5.5vw, 64px);
+    font-size: clamp(30px, 5vw, 58px);
     font-weight: 900;
-    line-height: 1.05;
-    letter-spacing: 0px;
+    line-height: 1.08;
+    letter-spacing: -0.5px;
     margin-bottom: clamp(18px, 2.5vw, 28px);
     animation: fadeUp 0.6s ease 0.1s both;
     overflow-wrap: break-word;
   }
 
-  .hero h1 span { color: var(--orange); }
+  /* palavra-chave com sublinhado desenhado */
+  .hero-accent {
+    color: var(--orange);
+    position: relative;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .hero-accent::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -4px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange), var(--orange-light));
+    border-radius: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: draw-underline 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.9s forwards;
+    box-shadow: 0 2px 12px rgba(240,121,32,0.5);
+  }
 
-  .hero p {
+  @keyframes draw-underline {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  .hero-lead {
     font-size: clamp(14px, 1.3vw, 17px);
     color: var(--gray-light);
     line-height: 1.7;
-    max-width: 480px;
-    margin-bottom: clamp(28px, 4vw, 44px);
+    max-width: 520px;
+    margin-bottom: clamp(20px, 2.5vw, 28px);
     animation: fadeUp 0.6s ease 0.2s both;
   }
+
+  .hero-lead strong { color: var(--white); font-weight: 700; }
+
+  /* chips de benefício */
+  .hero-features {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 clamp(26px, 3vw, 36px) 0;
+    padding: 0;
+    animation: fadeUp 0.6s ease 0.3s both;
+  }
+
+  .hero-features li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    background: rgba(240,121,32,0.08);
+    border: 1px solid rgba(240,121,32,0.25);
+    padding: 7px 14px;
+    border-radius: 24px;
+    white-space: nowrap;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+
+  .hero-features li:hover {
+    background: rgba(240,121,32,0.15);
+    border-color: rgba(240,121,32,0.5);
+    transform: translateY(-2px);
+  }
+
+  .hero-feature-icon { font-size: 15px; line-height: 1; }
 
   .hero-btns {
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
-    animation: fadeUp 0.6s ease 0.3s both;
+    animation: fadeUp 0.6s ease 0.4s both;
   }
 
   .btn-primary {
