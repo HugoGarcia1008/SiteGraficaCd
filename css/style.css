@@ -881,6 +881,62 @@
 
   .form-submit:disabled { cursor: wait; opacity: 0.85; transform: none; }
 
+  .form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .form-submit--wpp {
+    background: #25D366;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+  }
+  .form-submit--wpp:hover {
+    background: #1ebe5a;
+    box-shadow: 0 8px 24px rgba(37,211,102,0.5);
+  }
+
+  .form-submit--email {
+    background: transparent;
+    color: var(--orange);
+    border: 1px solid rgba(240,121,32,0.5);
+    box-shadow: none;
+  }
+  .form-submit--email:hover {
+    background: rgba(240,121,32,0.08);
+    border-color: var(--orange);
+    box-shadow: none;
+  }
+
+  .btn-icon { display: inline-block; margin-right: 4px; }
+
+  .btn-whatsapp {
+    background: #25D366 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4) !important;
+  }
+  .btn-whatsapp:hover {
+    background: #1ebe5a !important;
+    box-shadow: 0 8px 28px rgba(37,211,102,0.55) !important;
+  }
+
+  .required { color: var(--orange); font-weight: 700; }
+
+  .char-counter {
+    float: right;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--gray-mid);
+    text-transform: none;
+  }
+
+  @media (max-width: 480px) {
+    .form-actions { grid-template-columns: 1fr; }
+  }
+
   .form-status {
     font-size: 13px;
     color: var(--gray-light);
